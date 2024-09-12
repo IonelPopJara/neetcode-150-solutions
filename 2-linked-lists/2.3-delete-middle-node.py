@@ -6,7 +6,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-    
+
     def append(self, val):
         new_node = Node(val)
         if not self.head:
@@ -16,7 +16,7 @@ class LinkedList:
             while current.next:
                 current = current.next
             current.next = new_node
-    
+
     def printList(self):
         if not self.head:
             print("Empty list")
@@ -53,7 +53,7 @@ while current:
     if current.val == 9:
         break
     current = current.next
-    
+
 # print("List from the node")
 # print(current)
 

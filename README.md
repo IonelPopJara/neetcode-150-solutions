@@ -24,5 +24,5 @@ To make it easier for myself, I used the extension [leetcode.nvim](https://githu
 
 ## Changelog
 
-Orignally, this repo contained the solutions for the problems presented in the book _Craking the Coding Interview_. However, after solving a few, I decided to go with _NeetCode 150_ because the structure seem easier to understand and it provided a clear guidance on what to do next.
+Orignally, this repo contained the solutions for the problems presented in the book _Craking the Coding Interview_. However, after solving a few, I decided to go with _NeetCode 150_ because the structure seemed easier to understand.
 

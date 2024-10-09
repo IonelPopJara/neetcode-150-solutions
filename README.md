@@ -3,9 +3,6 @@ This repo contains the solutions for the problems presented in the [NeetCode 150
 
 The access to this roadmap is completely free for everyone.
 
-## TODO:
-Add the nvim extension I'm using.
-
 ## Repo Structure
 ```
 .
@@ -20,6 +17,10 @@ Add the nvim extension I'm using.
 │   └── extra-sorting
 └── README.md
 ```
+
+## LeetCode
+
+To make it easier for myself, I used the extension [leetcode.nvim](https://github.com/kawre/leetcode.nvim) created by [kawre](https://github.com/kawre). This extension allows you to solve leetcode challenges inside Neovim.
 
 ## Changelog
 

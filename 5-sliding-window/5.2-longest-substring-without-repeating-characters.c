@@ -3,8 +3,38 @@
 #include <string.h>
 
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
+#define HASHMAP_SIZE 128
 
+// Second version after watching a neetcode video
 int lengthOfLongestSubstring(char* s) {
+    // Get the length of the input string
+    int length = strlen(s);
+    int maxLength = 0;
+
+    // Initialize hashmap...
+    int hashMap[HASHMAP_SIZE] = {0};
+
+    // Initialize left pointer
+    int left = 0;
+
+    // Initialize right pointer and start iterating
+    for (int right = 0; right < length; right++) {
+        while (hashMap[s[right]] > 0) {
+            hashMap[s[left]] -= 1;
+            left++;
+        }
+        // Add the right character to the hashmap
+        hashMap[s[right]] += 1;
+
+        // Update max length
+        maxLength = MAX(right - left + 1, maxLength);
+    }
+
+    return maxLength;
+}
+
+// First version without help
+int lengthOfLongestSubstringOld(char* s) {
     // Get the length of the input string
     int length = strlen(s);
     int maxLength = 1;

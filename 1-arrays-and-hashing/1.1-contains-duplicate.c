@@ -12,14 +12,10 @@ typedef struct node {
 } Node;
 
 int hash(int val) {
-    int hashed = val & HASHMAP_SIZE;
-    /*printf("Hashed %d: %d\n", val, hashed);*/
-    if (hashed >= HASHMAP_SIZE) {
-        printf("Value: %d | %d\n", val, hashed);
-        hashed = 0;
-    }
+    // NOTE: Modulo works different in Python and in C for negative integers
+    int hashed = abs(val) % HASHMAP_SIZE;
 
-    return hashed;
+    return abs(hashed);
 }
 
 void insert(Node* hashmap[], int val) {
@@ -64,6 +60,17 @@ bool exists(Node* hashmap[], int val) {
     return false;
 }
 
+void freeHashmap(Node* hashmap[]) {
+    for (int i = 0; i < HASHMAP_SIZE; i++) {
+        Node* current = hashmap[i];
+        while (current != NULL) {
+            Node* tmp = current;
+            current = current->next;
+            free(tmp);
+        }
+    }
+}
+
 bool containsDuplicate(int* nums, int numsSize) {
     // Create hashmap
     Node* hashmap[HASHMAP_SIZE] = { NULL };
@@ -71,6 +78,7 @@ bool containsDuplicate(int* nums, int numsSize) {
     for (int i = 0; i < numsSize; i++) {
         // If we find a duplicate, return true
         if (exists(hashmap, nums[i])) {
+            freeHashmap(hashmap);
             return true;
         }
 
@@ -78,6 +86,7 @@ bool containsDuplicate(int* nums, int numsSize) {
         insert(hashmap, nums[i]);
     }
 
+    freeHashmap(hashmap);
     return false;
 }
 // @leet end

@@ -42,9 +42,9 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize) {
 
     // Index:           [0 , 1 , 2 , 3 ]
     // Input array:     [1 , 2 , 3 , 4 ]
-    // Prefix product:  [1 , 2 , 6 , 24]
-    // Suffix product:  [24, 24, 12, 4 ]
-    // Result:          [24, 12, 8 , 6 ]
+    // Prefix product:      [1 , 1 , 2 , 6 , 24]
+    // Suffix product:  [24, 24, 12, 4 , 1 ]
+    // Result:              [24, 12, 8 , 6 ]
     // for an index i, result = preffix[i - 1] * suffix[i + 1]
     // for i = 2, result = preffix[1] * suffix[3] = 2 * 4 = 8
 
